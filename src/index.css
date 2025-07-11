@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-appear: appear 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-img-shadow: img-shadow-animation infinite cubic-bezier(0.77, 0, 0.175, 1) 4s;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      translate: 0 1rem;
+    }
+    100% {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes img-shadow-animation {
+    0% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 1.5rem;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+}
+
+@utility animation-delay-* {
+  animation-delay: --value(integer)ms;
+}
+
+.delayed {
+  animation-delay: 1s; /* 1 second delay */
+}
